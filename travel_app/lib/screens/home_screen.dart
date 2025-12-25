@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/widgets/home_header.dart';
+import 'package:travel_app/widgets/home_search_bar.dart';
+import 'package:travel_app/widgets/location_scroll.dart';
+import 'package:travel_app/widgets/popular_scroll.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,38 +15,13 @@ class HomeScreen extends StatelessWidget {
           padding: const EdgeInsets.only(left: 18, right: 18, top: 20),
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Explore'),
-                      Text(
-                        'Aspen',
-                        style: Theme.of(context).textTheme.headlineSmall,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Icon(Icons.location_on, size: 16),
-                      const SizedBox(width: 4),
-                      Transform.translate(
-                        offset: const Offset(0, 1),
-                        child: const Text(
-                          'Ason USA',
-                          style: TextStyle(fontSize: 14),
-                        ),
-                      ),
-                      const SizedBox(width: 2),
-                      const Icon(Icons.keyboard_arrow_down_rounded, size: 18),
-                    ],
-                  ),
-                ],
-              ),
+              HomeHeader(),
+              SizedBox(height: 20),
+              HomeSearchBar(),
+              SizedBox(height: 20),
+              LocationScroll(),
+              SizedBox(height: 20),
+              PopularScroll()
             ],
           ),
         ),
